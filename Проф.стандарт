@@ -1,0 +1,234 @@
+from tkinter import *
+from tkinter import messagebox
+import time
+
+w = Tk()
+w.frame()
+w.title('Проф стандарт')
+
+def name():
+    answer = messagebox.askyesno(title='Вопрос', message='Начать тестирование? У вас будет 10 минут.')
+    if answer:
+        label = Label()
+        label.grid()
+        entry = Entry()
+        entry.grid()
+        s = entry.get()
+        entry.delete(0, END)
+        label['text'] = s
+        print(s)
+    else:
+        exit()
+
+def qw_1():
+    tim1()
+    counter = 0
+    qw1 = Label(w, text='Страхование - отношения по защите интересов физических и юридических лиц Российской Федерации при наступлении определенных страховых случаев за счет денежных фондов?')
+    qw1.grid()
+    an1 = Entry()
+    an1.grid()
+    bt1 = Button(w, text='Ответить',command=lambda: check_1())
+    bt1.grid()
+    def check_1():
+      global counter
+      if an1.get().lower() == 'да':
+        counter = counter + 1
+        qw_2()
+      else:
+        counter = counter
+        qw_2()
+
+def qw_2():
+    tim1()
+    counter = 1
+    qw2 = Label(w, text='Страховая деятельность - сфера деятельности страховщиков по страхованию, перестрахованию, взаимному страхованию, а также страховых брокеров по оказанию услуг, связанных со страхованием, с перестрахованием?')
+    qw2.grid()
+    an2 = Entry()
+    an2.grid()
+    bt2 = Button(w, text='Ответить',command=lambda: check_2())
+    bt2.grid()
+    def check_2():
+      global counter
+      if an2.get().lower() == 'да':
+        counter = counter + 1
+        qw_3()
+      else:
+        counter = counter
+        qw_3()
+
+def qw_3():
+    tim1()
+    counter = 2
+    qw3 = Label(w, text='Целью организации страхового дела является обеспечение защиты прав и свобод человека и гражданина? ')
+    qw3.grid()
+    an3 = Entry()
+    an3.grid()
+    bt3 = Button(w, text='Ответить',command=lambda: check_3())
+    bt3.grid()
+    def check_3():
+      global counter
+      if an3.get().lower() == 'нет':
+        counter = counter + 1
+        qw_4()
+      else:
+        counter = counter
+        qw_4()
+
+def qw_4():
+    tim1()
+    counter = 3
+    qw4 = Label(w, text='Страхование осуществляется в форме добровольного страхования и обязательного страхования?')
+    qw4.grid()
+    an4 = Entry()
+    an4.grid()
+    bt4 = Button(w, text='Ответить',command=lambda: check_4())
+    bt4.grid()
+    def check_4():
+      global counter
+      if an4.get().lower() == 'да':
+        counter = counter + 1
+        qw_5()
+      else:
+        counter = counter
+        qw_5()
+
+def qw_5():
+    tim1()
+    counter = 4
+    qw5 = Label(w, text='Добровольное страхование осуществляется на основании справки страхования и правил страхования, определяющих общие условия и порядок его осуществления?')
+    qw5.grid()
+    an5 = Entry()
+    an5.grid()
+    bt5 = Button(w, text='Ответить',command=lambda: check_5())
+    bt5.grid()
+    def check_5():
+      global counter
+      if an5.get().lower() == 'нет':
+        counter = counter + 1
+        qw_6()
+      else:
+        counter = counter
+        qw_6()
+
+def qw_6():
+    tim1()
+    counter = 5
+    qw6 = Label(w, text='Банк России вправе определять в своих нормативных актах минимальные (стандартные) требования к условиям и порядку осуществления отдельных видов добровольного страхования?')
+    qw6.grid()
+    an6 = Entry()
+    an6.grid()
+    bt6 = Button(w, text='Ответить',command=lambda: check_6())
+    bt6.grid()
+    def check_6():
+      global counter
+      if an6.get().lower() == 'да':
+        counter = counter + 1
+        qw_7()
+      else:
+        counter = counter
+        qw_7()
+
+def qw_7():
+    tim1()
+    counter = 6
+    qw7 = Label(w, text='Объектами страхования жизни не могут быть имущественные интересы, связанные с дожитием граждан до определенных возраста или срока либо наступлением иных событий в жизни граждан, а также с их смертью .')
+    qw7.grid()
+    an7 = Entry()
+    an7.grid()
+    bt7 = Button(w, text='Ответить',command=lambda: check_7())
+    bt7.grid()
+    def check_7():
+      global counter
+      if an7.get().lower() == 'нет':
+        counter = counter + 1
+        qw_8()
+      else:
+        counter = counter
+        qw_8()
+
+def qw_8():
+    tim1()
+    counter = 7
+    qw8 = Label(w, text='Объектами страхования от несчастных случаев и болезней могут быть имущественные интересы, связанные с причинением вреда здоровью граждан, а также с их смертью в результате несчастного случая или болезни ?')
+    qw8.grid()
+    an8 = Entry()
+    an8.grid()
+    bt8 = Button(w, text='Ответить',command=lambda: check_8())
+    bt8.grid()
+    def check_8():
+      global counter
+      if an8.get().lower() == 'да':
+        counter = counter + 1
+        qw_10()
+      else:
+        counter = counter
+        qw_10()
+
+def qw_10():
+    tim1()
+    counter = 9
+    qw10 = Label(w, text='Объектами страхования имущества могут быть имущественные интересы, связанные с риском утраты (гибели), недостачи или повреждения имущества (страхование имущества)?')
+    qw10.grid()
+    an10 = Entry()
+    an10.grid()
+    bt10 = Button(w, text='Ответить',command=lambda: check_10())
+    bt10.grid()
+    def check_10():
+      global counter
+      if an10.get().lower() == 'да':
+        counter = counter + 1
+        qw_11()
+      else:
+        counter = counter
+        qw_11()
+
+def qw_11():
+    tim1()
+    counter = 10
+    qw11 = Label(w, text='Участниками отношений, регулируемых настоящим Законом, могут быть: страхователи, застрахованные лица, выгодоприобретатели?')
+    qw11.grid()
+    an11 = Entry()
+    an11.grid()
+    bt11 = Button(w, text='Ответить',command=lambda: check_11())
+    bt11.grid()
+    def check_11():
+      global counter
+      if an11.get().lower() == 'да':
+        counter = counter + 1
+        messagebox.showinfo('Правильных ответов ', str(counter))
+        print('Правильных ответов=', counter)
+        btfinal = Button(w, text='Закончить', command=qw_end1)
+        btfinal.grid()
+      else:
+        counter = counter
+        messagebox.showinfo('Правильных ответов ', str(counter))
+        print('Правильных ответов=', counter)
+        btfinal = Button(w, text='Закончить', command=qw_end1)
+        btfinal.grid()
+
+def qw_end1():
+    if counter >= 9 and counter <= 10:
+        messagebox.showinfo('Оценка', 'Вы эксперт!')
+        exit()
+    elif counter >= 6 and counter <= 8:
+        messagebox.showinfo('Оценка', 'Вы хороший сотрудник!')
+        exit()
+    elif counter >= 0 and counter <= 5:
+        messagebox.showinfo('Оценка', 'Вы должны уволиться!')
+        exit()
+def tim1():
+    global min
+    sec = time.time()
+    sec = sec % 3600 // 60
+    if sec > min + 10:
+      messagebox.showerror(title='Конец', message="Ваше время вышло!")
+      exit()
+
+sec = 0
+seconds = time.time()
+seconds = seconds % 3600
+min = seconds // 60
+print(min)
+qw_1()
+counter = 0
+mainloop()
